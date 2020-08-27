@@ -1,4 +1,4 @@
-package operators;
+﻿package operators;
 
 public class BitWiseMain2 {
     public static void main (String [] arg){
@@ -16,8 +16,5 @@ public class BitWiseMain2 {
         System.out.println("Результат -42>>>63 равен "+(a>>>63));   // результат 1 1101 0110 >>> 63 равен 1  или 0000 0001
         System.out.println("Результат -15>>63 равен "+(b>>>63));    // результат 1 1111 0001 >>> 63 равен 1  или 0000 0001
         System.out.println("Результат 42 >>=4 равен "+(a >>=4));    // результат 1 1101 0110 >> 4 равен -3  или 1 1111 1101 при этом в переменную a записывается значение -3, аналогично со всеми операциями присваивания
-
-
-
     }
 }
