@@ -1,5 +1,4 @@
-package operators;
-
+package operators.homework6;
 import java.util.Scanner;
 
 public class BranchingSwitch {

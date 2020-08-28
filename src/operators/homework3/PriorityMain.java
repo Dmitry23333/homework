@@ -1,4 +1,4 @@
-package operators;
+package operators.homework3;
 
 public class PriorityMain {
     public static void main (String[] arg){
@@ -31,7 +31,6 @@ public class PriorityMain {
         //System.out.println( (5+7>20?68>=68:22*2>>d++)/--e);
         //2.8
         System.out.println ("Результат 6-2>3 && 12*12 <= 119 равен "+ ( 6-2 > 3 && 12*12 <= 119 ));// 6-2= 4 > 3 true и 12*12 <= 119 false -> true && false = false
-
         //2.9
         System.out.println("Результат true&&false равен "+ (true&&false)); //true && false = false
     }

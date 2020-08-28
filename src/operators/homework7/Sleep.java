@@ -1,4 +1,4 @@
-package operators;
+package operators.homework7;
 
 public class Sleep {
     public static void main (String[] arg){

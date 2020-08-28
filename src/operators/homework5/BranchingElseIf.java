@@ -1,4 +1,4 @@
-package operators;
+package operators.homework5;
 
 import java.util.Objects;
 import java.util.Scanner;
@@ -17,6 +17,5 @@ public class BranchingElseIf {
             System.out.println("Привет\nЯ тебя так долго ждал");
             }
         }
-
     }
 }
