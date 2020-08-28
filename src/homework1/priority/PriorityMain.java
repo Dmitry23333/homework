@@ -1,4 +1,4 @@
-package operators.homework3;
+package homework1.priority;
 
 public class PriorityMain {
     public static void main (String[] arg){

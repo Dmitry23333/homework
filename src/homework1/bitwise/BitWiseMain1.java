@@ -1,4 +1,4 @@
-package operators.homework1;
+package homework1.bitwise;
 
 public class BitWiseMain1 {
     public static void main (String [] arg){

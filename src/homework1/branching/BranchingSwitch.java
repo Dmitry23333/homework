@@ -1,4 +1,4 @@
-package operators.homework6;
+package homework1.branching;
 import java.util.Scanner;
 
 public class BranchingSwitch {
@@ -8,8 +8,9 @@ public class BranchingSwitch {
             String name1 = in.nextLine();
             in.close();
             switch (name1) {
-                case "Вася": System.out.println("Привет");
-                    System.out.println("Я тебя так долго ждал");
+                case "Вася": System.out.println("Привет\nЯ тебя так долго ждал");
+                break;
+                case "Анастасия": System.out.println("Я тебя так долго ждал");
                 break;
                 default:System.out.println("Добрый день, а вы кто?");
             }

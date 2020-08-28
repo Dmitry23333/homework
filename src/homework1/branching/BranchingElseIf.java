@@ -1,4 +1,4 @@
-package operators.homework5;
+package homework1.branching;
 
 import java.util.Objects;
 import java.util.Scanner;
@@ -10,12 +10,16 @@ public class BranchingElseIf {
         String name1 = in.nextLine();
         in.close();
         String name = "Вася";
-        if (Objects.equals(name,name1)==false) {
+        String name2="Анастасия";
+        if (Objects.equals(name,name1)) {
+            System.out.println("Привет\nЯ тебя так долго ждал");
+        }
+        else { if (Objects.equals(name2,name1)){
+            System.out.println("Я тебя так долго ждал");
+            }
+        else {
             System.out.println("Добрый день, а вы кто?");
         }
-        else { if (Objects.equals(name,name1)){
-            System.out.println("Привет\nЯ тебя так долго ждал");
-            }
         }
     }
 }
