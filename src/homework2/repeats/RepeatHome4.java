@@ -1,4 +1,4 @@
-package homework2.repeats;
+﻿package homework2.repeats;
 // ????? тупо для этого условия
 public class RepeatHome4 {
     public static void main(String[] args) {
@@ -9,8 +9,8 @@ public class RepeatHome4 {
             a *=3;
             System.out.println(a);
             if (a<0){
-                System.out.println("до переполнения"+b);
-                System.out.println("после переполнения"+a);
+                System.out.println("до переполнения "+b);
+                System.out.println("после переполнения "+a);
                 return;
             }
         }
