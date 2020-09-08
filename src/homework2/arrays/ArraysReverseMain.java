@@ -6,8 +6,7 @@ public class ArraysReverseMain {
     public static void main(String[] args) {
         Scanner size = new Scanner(System.in);
         System.out.print("Введите размер массива ");
-        int n=0;
-        n= size.nextInt();
+        int n= size.nextInt();
         int[] arr=new int[n];
         for (int i = 0; i < arr.length; i++) {
             Scanner element = new Scanner(System.in);
