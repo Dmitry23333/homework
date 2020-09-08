@@ -1,6 +1,6 @@
 package homework2.repeats;
 
-public class repeatHome2 {
+public class RepeatHome2 {
     public static void main(String[] b) {
         String regex = "\\d+";
         StringBuilder builder = new StringBuilder();
@@ -25,6 +25,10 @@ public class repeatHome2 {
         for (int i=1;i< numbers.length;i++) {
             System.out.print("*" + numbers[i]);
             result *= Character.getNumericValue(numbers[i]);
+        }
+        if (result < 0 || result >Long.MAX_VALUE) {
+            System.out.println("Введены данные, дающие результат превышающий значение для данного типа данных");
+            return;
         }
         System.out.print("="+result);
     }

@@ -2,7 +2,7 @@ package homework2.repeats;
 
 import java.util.Scanner;
 
-public class repeatPow {
+public class RepeatPow {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.print("Введите число ");

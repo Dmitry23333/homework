@@ -1,6 +1,6 @@
 package homework2.repeats;
 
-public class repeatHome1 {
+public class RepeatHome1 {
     public static void main(String[] b) {
         String regex = "\\d+";
         StringBuilder builder = new StringBuilder();
