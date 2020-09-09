@@ -14,7 +14,6 @@ public class ArraysSortBubble {
         SortBubble(test3);
         SortBubble(test4);
     }
-///
     public static void SortBubble(int[] array) {
         System.out.print(Arrays.toString(array));
         boolean flag = false;
