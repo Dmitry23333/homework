@@ -1,4 +1,4 @@
-package homework2.repeats;
+package homework2.task1;
 // ????? тупо для этого условия
 public class RepeatOverflow {
     public static void main(String[] args) {
