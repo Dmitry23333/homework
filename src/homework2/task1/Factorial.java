@@ -1,4 +1,4 @@
-package homework2.repeats;
+package homework2.task1;
 
 public class Factorial {
     public static void main(String[] b) {
