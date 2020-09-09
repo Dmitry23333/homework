@@ -11,17 +11,17 @@ public class ArraySortShaker {
         int[] test3 = {9,1,5,99,9,9};
         int[] test4 = {};
 
-        System.out.println( Arrays.toString(test1)+ " ----> "+SortShaker(test1));
-        System.out.println( Arrays.toString(test2)+ " ----> "+SortShaker(test2));
-        System.out.println( Arrays.toString(test3)+ " ----> "+SortShaker(test3));
-        System.out.println( Arrays.toString(test4)+ " ----> "+SortShaker(test4)+"\n");
+        SortShaker(test1);
+        SortShaker(test2);
+        SortShaker(test3);
+        SortShaker(test4);
 
         Random rand=new Random();
         int[] array=new int[rand.nextInt(10)];
         for (int i=0;i< array.length; i++){
             array[i]=rand.nextInt(10);
         }
-        System.out.println( Arrays.toString(array)+ " ----> "+SortShaker(array));
+        SortShaker(array);
 
         Scanner size = new Scanner(System.in);
         System.out.print("Введите размер массива ");
@@ -33,11 +33,11 @@ public class ArraySortShaker {
             int a= element.nextInt();
             arr[i]=a;
         }
-
-        System.out.println( Arrays.toString(arr)+ " ----> "+SortShaker(arr));
+        SortShaker(arr);
         }
 
-    public static String SortShaker(int[] array) {
+    public static void SortShaker(int[] array) {
+        System.out.print(Arrays.toString(array));
         int temp;
         int left = 0;
         int right = array.length - 1;
@@ -60,6 +60,6 @@ public class ArraySortShaker {
             left++;
         }
         while (left < right);
-        return Arrays.toString(array);
+        System.out.println("--->"+Arrays.toString(array));
     }
 }
