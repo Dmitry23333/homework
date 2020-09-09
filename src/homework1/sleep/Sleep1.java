@@ -1,6 +1,6 @@
-﻿package homework1.sleep1;
+﻿package homework1.sleep;
 
-public class Sleep {
+public class Sleep1 {
     public static void main (String[] arg){
         boolean weekday=false;
         boolean vacation=false;
