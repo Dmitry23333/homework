@@ -9,7 +9,7 @@ public class RepeatHome2 {
         }
         String str = builder.toString();
         if (!str.matches(regex) ) {
-            System.out.println("Введен не числовой символ");
+            System.out.println("Введен не числовой символ или отрицательное число");
             return;
         }
         if(str.length()==1){
