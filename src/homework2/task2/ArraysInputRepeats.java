@@ -1,18 +1,17 @@
 package homework2.task2;
 
 
-import java.util.Scanner;
+import static homework2.task1.CheckNumbers.inputCheckPositiveNumber;
+import static homework2.task1.CheckNumbers.inputCheckTypeInt;
 
 public class ArraysInputRepeats {
     public static void main(String[] args) {
-        Scanner size = new Scanner(System.in);
         System.out.print("Введите размер массива ");
-        int n= size.nextInt();
-        int[] arr=new int[n];
+        int n=inputCheckPositiveNumber();
+        int [] arr=new int[n];
         for (int i = 0; i < arr.length; i++) {
-            Scanner element = new Scanner(System.in);
             System.out.print("Введите элемент массива ");
-            int a= element.nextInt();
+            int a=inputCheckTypeInt();
             arr[i]=a;
         }
 
@@ -40,5 +39,9 @@ public class ArraysInputRepeats {
         }
         System.out.print("For ");
     }
+
+
+
+
 }
 

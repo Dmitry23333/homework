@@ -2,25 +2,16 @@ package homework2.task1;
 
 import java.util.Scanner;
 
+import static homework2.task1.CheckNumbers.inputCheckPositiveNumber;
+import static homework2.task1.CheckNumbers.inputCheckTypeDouble;
+
 public class RepeatPow {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
         System.out.print("Введите число ");
-        while(!in.hasNextDouble ()){
-            System.out.println("Повторить ввод. Введите число");
-            in.nextLine();
-        }
-        Double number1 =  in.nextDouble();
-        Scanner in1 = new Scanner(System.in);
-        String regex="\\d+";
+        double number1 =inputCheckTypeDouble();
         System.out.print("Введите степень  ");
-        String number2=in1.nextLine();
-        while(!number2.matches(regex)){
-            System.out.println("Повторить ввод. Степень равна положительному целому числу");
-            number2=in1.nextLine();
-        }
-        int power=Integer.parseInt(number2);
-        System.out.println(number1 +" в степени "+number2 + "= "+Math.pow(number1,power));
+        int number2=inputCheckPositiveNumber();
+        System.out.println(number1 +" в степени "+number2 + "= "+Math.pow(number1,number2));
     }
 }
 

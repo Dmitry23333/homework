@@ -1,18 +1,14 @@
 package homework2.task2;
 
-import java.util.Scanner;
+import static homework2.task1.CheckNumbers.*;
 
 public class ArraysReverseMain {
     public static void main(String[] args) {
-        Scanner size = new Scanner(System.in);
         System.out.print("Введите размер массива ");
-        int n= size.nextInt();
-        int[] arr=new int[n];
+        int[] arr=new int[inputCheckPositiveNumber()];
         for (int i = 0; i < arr.length; i++) {
-            Scanner element = new Scanner(System.in);
             System.out.print("Введите элемент массива ");
-            int a= element.nextInt();
-            arr[i]=a;
+            arr[i]= inputCheckTypeInt();
         }
 
         int i=arr.length-1;

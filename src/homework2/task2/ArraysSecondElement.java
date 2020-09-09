@@ -2,17 +2,17 @@ package homework2.task2;
 
 import java.util.Scanner;
 
+import static homework2.task1.CheckNumbers.inputCheckPositiveNumber;
+import static homework2.task1.CheckNumbers.inputCheckTypeInt;
+
 public class ArraysSecondElement {
     public static void main(String[] args) {
-        Scanner size = new Scanner(System.in);
         System.out.print("Введите размер массива ");
-        int n= size.nextInt();
+        int n=inputCheckPositiveNumber();
         int[] arr=new int[n];
         for (int i = 0; i < arr.length; i++) {
-            Scanner element = new Scanner(System.in);
             System.out.print("Введите элемент массива "+i+" ");
-            int a= element.nextInt();
-            arr[i]=a;
+            arr[i]=inputCheckTypeInt();
         }
         for (int i = 0; i < arr.length; i++) {
             if(i%2==0){

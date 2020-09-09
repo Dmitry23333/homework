@@ -1,4 +1,4 @@
-package homework2.repeats;
+package homework2.task1;
 // ????? тупо для этого условия
 public class RepeatOverflow {
     public static void main(String[] args) {
@@ -8,7 +8,7 @@ public class RepeatOverflow {
             b=a;
             a=a*3;
             if(a<0) {
-                System.out.println(b);
+                System.out.println("до переполнения "+b);
                 System.out.println("после переполнения " + a);
                 return;
             }
