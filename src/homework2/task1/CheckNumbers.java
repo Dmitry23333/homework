@@ -1,4 +1,4 @@
-package homework2.task1;
+﻿package homework2.task1;
 
 import java.util.Scanner;
 
@@ -18,7 +18,7 @@ public class CheckNumbers {
     public static double inputCheckTypeDouble(){
         Scanner in = new Scanner(System.in);
         while(!in.hasNextDouble ()){
-            System.out.println("Повторить ввод. Введите целое число");
+            System.out.println("Повторить ввод. Введите число");
             in.nextLine();
         }
         return in.nextDouble();
