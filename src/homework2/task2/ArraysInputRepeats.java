@@ -13,7 +13,7 @@ public class ArraysInputRepeats {
             Scanner element = new Scanner(System.in);
             System.out.print("Введите элемент массива ");
             int a= element.nextInt();
-            arr[i]=a;
+            arr[i]=a;jjjhjhjhjhjhj
         }
 
         int i=0;
