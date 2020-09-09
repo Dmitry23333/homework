@@ -11,7 +11,7 @@ public class ArraysSortBubble {
 
         SortBubble(test1);
         SortBubble(test2);
-        SortBubble(test3);kjkj
+        SortBubble(test3);
         SortBubble(test4);
     }
 
