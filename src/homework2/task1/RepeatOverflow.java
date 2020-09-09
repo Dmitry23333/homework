@@ -1,16 +1,15 @@
-package homework2.task1;
+package homework2.repeats;
 // ????? тупо для этого условия
 public class RepeatOverflow {
     public static void main(String[] args) {
-        byte a = 1;
-        byte b;
+        long a = 1;
+        long b;
         while (true){
             b=a;
-            a *=5;
-            System.out.println(a);
-            if (a<0){
+            a=a*3;
+            if(a<0) {
                 System.out.println(b);
-                System.out.println("после переполнения "+a);
+                System.out.println("после переполнения " + a);
                 return;
             }
         }
