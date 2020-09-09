@@ -9,7 +9,6 @@ public class ArraysSecondElement {
     public static void main(String[] args) {
         System.out.print("Введите размер массива ");
         int n=inputCheckPositiveNumber();
-        int[] arr=new int[n];
         for (int i = 0; i < arr.length; i++) {
             System.out.print("Введите элемент массива "+i+" ");
             arr[i]=inputCheckTypeInt();
