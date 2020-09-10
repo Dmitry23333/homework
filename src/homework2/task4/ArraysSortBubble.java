@@ -13,7 +13,27 @@ public class ArraysSortBubble {
         SortBubble(test2);
         SortBubble(test3);
         SortBubble(test4);
+
+	 Random rand=new Random();
+        int[] array=new int[rand.nextInt(10)];
+        for (int i=0;i< array.length; i++){
+            array[i]=rand.nextInt(10);
+        }
+        SortBubble(array);
+
+        Scanner size = new Scanner(System.in);
+        System.out.print("¬ведите размер массива ");
+        int n= size.nextInt();
+        int[] arr=new int[n];
+        for (int i = 0; i < arr.length; i++) {
+            Scanner element = new Scanner(System.in);
+            System.out.print("¬ведите элемент массива "+i+" ");
+            int a= element.nextInt();
+            arr[i]=a;
+        }
+        SortBubble(arr);
     }
+
     public static void SortBubble(int[] array) {
         System.out.print(Arrays.toString(array));
         boolean flag = false;
