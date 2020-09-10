@@ -22,12 +22,12 @@ public class ArraysSortBubble {
         SortBubble(array);
 
         Scanner size = new Scanner(System.in);
-        System.out.print("Введите размер массива ");
+        System.out.print(" Р’РІРµРґРёС‚Рµ СЂР°Р·РјРµСЂ РјР°СЃСЃРёРІР° ");
         int n= size.nextInt();
         int[] arr=new int[n];
         for (int i = 0; i < arr.length; i++) {
             Scanner element = new Scanner(System.in);
-            System.out.print("Введите элемент массива "+i+" ");
+            System.out.print("Р’РІРµРґРёС‚Рµ СЌР»РµРјРµРЅС‚ РјР°СЃСЃРёРІР° "+i+" ");
             int a= element.nextInt();
             arr[i]=a;
         }
