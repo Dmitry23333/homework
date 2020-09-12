@@ -11,17 +11,17 @@ public class ArraySortShaker {
         int[] test3 = {9,1,5,99,9,9};
         int[] test4 = {};
 
-        SortShaker(test1);
-        SortShaker(test2);
-        SortShaker(test3);
-        SortShaker(test4);
+        sortShaker(test1);
+        sortShaker(test2);
+        sortShaker(test3);
+        sortShaker(test4);
 
         Random rand=new Random();
         int[] array=new int[rand.nextInt(10)];
         for (int i=0;i< array.length; i++){
             array[i]=rand.nextInt(10);
         }
-        SortShaker(array);
+        sortShaker(array);
 
         Scanner size = new Scanner(System.in);
         System.out.print("Введите размер массива ");
@@ -33,10 +33,10 @@ public class ArraySortShaker {
             int a= element.nextInt();
             arr[i]=a;
         }
-        SortShaker(arr);
+        sortShaker(arr);
         }
 
-    public static void SortShaker(int[] array) {
+    public static void sortShaker(int[] array) {
         System.out.print(Arrays.toString(array));
         int temp;
         int left = 0;
