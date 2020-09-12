@@ -14,7 +14,7 @@ public class ArraysSortBubble {
         sortBubble(test3);
         sortBubble(test4);
 
-	 Random rand=new Random();
+	    Random rand=new Random();
         int[] array=new int[rand.nextInt(10)];
         for (int i=0;i< array.length; i++){
             array[i]=rand.nextInt(10);
