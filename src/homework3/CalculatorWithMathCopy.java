@@ -13,7 +13,7 @@ public class CalculatorWithMathCopy {
         return a*b;
     }
 
-    public double divison(double a, double b) {
+    public double division(double a, double b) {
         return a/b;
     }
 
