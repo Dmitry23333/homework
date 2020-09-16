@@ -1,5 +1,7 @@
 package homework3;
 
+import homework3.calcs.CalculatorWithMathCopy;
+
 public class CalculatorWithMathCopyMain {
     public static void main(String[] args) {
         CalculatorWithMathCopy calc =new CalculatorWithMathCopy();
