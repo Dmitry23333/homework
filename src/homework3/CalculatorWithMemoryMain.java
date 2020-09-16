@@ -12,6 +12,5 @@ public class CalculatorWithMemoryMain {
         calc.save(calc.add(calc.multiplication(15,7),calc.getResult()));
         calc.save(calc.add(4.1,calc.getResult()));
         System.out.println(calc.getResult());
-        System.out.println(calc.getResult());
     }
 }

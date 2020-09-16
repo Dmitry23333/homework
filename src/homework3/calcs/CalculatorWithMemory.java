@@ -12,11 +12,11 @@ public class CalculatorWithMemory extends CalculatorWithOperator implements  ICa
     public double getResult(){
         if(!occupancy) {
             System.out.println("memory is empty");
-            return 0;
+            this.result=0;
         } else {
             this.occupancy=false;//Значение стёрто
-            return this.result;
         }
+        return this.result;
     }
     public CalculatorWithMemory(ICalc calc){
         this.calc = calc;
