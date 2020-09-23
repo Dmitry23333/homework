@@ -9,7 +9,7 @@ public class DataContainer<T>{
     private T[] data;
     private int index = 0;
     DataContainer(Class<T> type) {   //КОНСТРУКТОР необходимо передать класс, чтобы он мог использовать его для создания массива с правильным типом среды выполнения
-        this.data = (T[]) Array.newInstance(type, 17);
+        this.data = (T[]) Array.newInstance(type, 5);
     }
     int add(T item) {
         if (this.index == this.data.length) {
@@ -80,14 +80,13 @@ public class DataContainer<T>{
             }
         }
     void sort(Comparator<T> comparator){
-        T tmp1;
+        T tmp;
         for (int i = 0; i < this.data.length-1; i++) {
-            if (this.data[this.index]!=null)
             for (int j = 0; j < this.data.length - 1; j++) {
-                if(comparator.compare(this.data[j], this.data[j + 1]) > 0) {
-                    tmp1 = this.data[j];
+                if (comparator.compare(this.data[j], this.data[j + 1]) > 0) {
+                    tmp = this.data[j];
                     this.data[j] = this.data[j + 1];
-                    this.data[j + 1] = tmp1;
+                    this.data[j + 1] = tmp;
                 }
             }
         }
