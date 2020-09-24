@@ -9,7 +9,7 @@ public class DataContainer<T>{
     private T[] data;
     private int index = 0;
     DataContainer(Class<T> type) {   //КОНСТРУКТОР необходимо передать класс, чтобы он мог использовать его для создания массива с правильным типом среды выполнения
-        this.data = (T[]) Array.newInstance(type, 0);
+        this.data = (T[]) Array.newInstance(type, 13);
     }
     int add(T item) {
         if (this.index == this.data.length) {
@@ -33,7 +33,7 @@ public class DataContainer<T>{
     }
 
     boolean delete(int index) {
-        if (index > this.index-1) {
+        if (index > this.index) {
             System.out.println("не сущ. индекс");
             return false;
         }
@@ -79,7 +79,25 @@ public class DataContainer<T>{
                 return b.append(']').toString();
             }
         }
+        T[] checkNull(T[] arr){
+            int count=0;
+            for (int i = 0; i < this.data.length; i++) {
+                if (this.data[i] == null) {
+                    count++;
+                }
+            }
+                T[] tmp = Arrays.copyOf(this.data, this.data.length - count);
+                int k=0;
+                for (int j = 0; j < data.length; j++) {
+                    tmp[k]=this.data[j];
+                    k++;
+                    this.data=tmp;
+                }
+            return this.data;
+        }
+
     void sort(Comparator<T> comparator){
+        checkNull(this.data);
         T tmp;
         for (int i = 0; i < this.data.length - 1; i++) {
             for (int j = 0; j < this.data.length - 1; j++) {

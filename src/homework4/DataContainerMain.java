@@ -11,11 +11,13 @@ public class DataContainerMain {
         data.add(23);
         data.add(7);
         data.add(45);
+        data.add(25);
+        data.deleteItem(25);
+        System.out.println(Arrays.toString(data.getItems()));
         data.sort(dataComporator);
         System.out.println(data.toString(data.getItems()));
-        data.delete(0);
         System.out.println(data.toString(data.getItems()));
-        data.deleteItem(45);
         System.out.println(data.toString(data.getItems()));
+
     }
 }
