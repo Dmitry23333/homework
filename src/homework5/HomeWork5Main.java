@@ -13,5 +13,9 @@ public class HomeWork5Main {
         System.out.println(text1.search(txt,"война")+" упоминаний слова 'война'");
         System.out.println(text1.search(txt,"и")+" упоминаний слова 'и'");
         System.out.println(text1.search(txt,"мир")+" упоминаний слова 'мир'");
+        ISearchEngine text2=new RegExSearch();
+        System.out.println(text2.search(txt,"война")+" упоминаний слова 'война'");
+        System.out.println(text2.search(txt,"и")+" упоминаний слова 'и'");
+        System.out.println(text2.search(txt,"мир")+" упоминаний слова 'мир'");
     }
 }
