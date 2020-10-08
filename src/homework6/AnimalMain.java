@@ -1,8 +1,8 @@
-package homework6;
+﻿package homework6;
 
 import java.util.*;
 
-public class AnimalPerson {
+public class AnimalMain {
     public static void main(String[] args) {
 
         //Работа с LinkedList
