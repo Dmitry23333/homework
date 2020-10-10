@@ -1,4 +1,4 @@
-﻿package workwithstrings;
+package withstrings;
 
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
@@ -12,6 +12,7 @@ public class Lines {
     private int level = 1;
     private boolean week = false;
     private boolean negative = false;
+    private boolean gender = false;
 
     public String toString(int number) {
         StringBuilder words = new StringBuilder(50);
@@ -19,10 +20,11 @@ public class Lines {
             negative = true;
             number=Math.abs(number); //берем число по модулю
         }
-        if (number==0)
+        if (number==0) {
             words.append("ноль ");
-        int sex = leword[level][3].indexOf("1")+1; //не красиво конечно, но работает
-        int h = (int)(number%1000); //текущий трехзначный сегмент
+        }
+        int rank = leword[level][3].indexOf("1")+1; //определяем ранг числа: тысяча, миллион и т.д.
+        int h = number%1000; //текущий трехзначный сегмент
         int d = h/100; //цифра сотен
         if (d>0) { //если в разряде сотен не ноль подставляем соответсвующее значение
             words.append(dig100[d-1]).append(" ");
@@ -33,22 +35,30 @@ public class Lines {
         switch(d) {
             case 0: break;
             case 1: words.append(dig10[n]).append(" "); // в остатке находится от 10 до 19
-                break;
+                    break;
             default: words.append(dig20[d-2]).append(" "); // в остатке от 20 до 99
         }
-        if (d==1)
-            n=0; //при двузначном остатке от 10 до 19, цифра едициц не должна учитываться т.к в dig10 прописаны все случаи
+        if (d==1) {
+            n = 0; //при двузначном остатке от 10 до 19, цифра едициц не должна учитываться т.к в dig10 прописаны все случаи
+        }
         switch(n) { // проверяем цифру единиц в остатке
             case 0: break;
             case 1:
             case 2: {
-                if(week) words.append(dig1[1][n-1]).append(" "); //один или два в зависимости от рода
-                else words.append(dig1[sex][n-1]).append(" ");
-            }
-            break;
+                if(week){
+                    words.append(dig1[1][n-1]).append(" "); //один или два в зависимости от рода
+                }
+                else{
+                    if(gender & ( n==1 || n==2 )){
+                        words.append(dig1[1][n-1]).append(" ");
+                    } else {
+                        words.append(dig1[rank][n-1]).append(" ");
+                    }
+                }
+            }break;
             default: words.append(dig1[0][n-1]).append(" ");
         }
-        if(level!=1) {
+        if(level!=1 || gender) {
             switch(n) {
                 case 1: words.append(leword[level][0]);
                     break;
@@ -56,8 +66,10 @@ public class Lines {
                 case 3:
                 case 4: words.append(leword[level][1]);
                     break;
-                default: if((h!=0)||((h==0)&&(level==1))) 
-                    words.append(leword[level][2]);
+                default: if((h!=0)||((h==0)&&(level==1))) {/*если трехзначный сегмент = 0, то добавлять
+                                                            нужно только слово разряда(тысяч, миллионов...)*/
+                            words.append(leword[level][2]);
+                         }
             }
         }
         int nextnum = number/1000;
@@ -80,13 +92,15 @@ public class Lines {
     public String toString(double number) {
         DecimalFormat df = new DecimalFormat("#.00");
         df.setRoundingMode(RoundingMode.DOWN); // обрезка до 2 знаков без округления
-        String numFull = df.format(number); // все число
+        String numFull = df.format(number);    // все число
+        gender = true;
         String numFrac = numFull.substring(numFull.length()-2, numFull.length());// забираем дробную часть
-        int fullnum = (int)Math.floor(number); //забираем целую часть и делаем int
-        int fracnum = Integer.parseInt(numFrac);// //забираем дробную часть и делаем int
+        int fullnum = (int)Math.floor(number);  //забираем целую часть и делаем int
+        int fracnum = Integer.parseInt(numFrac);//забираем дробную часть и делаем int
         String result = toString(fullnum);
-        level=0;
-        result+=" целых " + toString(fracnum) + " " ;
+        level=0; // что бы задействовать слова "сотая", "сотые", "сотых"
+        result += " " + toString(fracnum);
+        gender = false;
         return result;
     }
     public String toWeek(int day) {
