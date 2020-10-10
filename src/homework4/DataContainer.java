@@ -11,7 +11,7 @@ public class DataContainer<T>{
     DataContainer(Class<T> type) {   //КОНСТРУКТОР необходимо передать класс, чтобы он мог использовать его для создания массива с правильным типом среды выполнения
         this.data = (T[]) Array.newInstance(type, 13);
     }
-    int add(T item) {
+    public int add(T item) {
         if (this.index == this.data.length) {
             T[] tmp = Arrays.copyOf(this.data, this.data.length + 1);
             this.data = tmp;
@@ -20,7 +20,7 @@ public class DataContainer<T>{
         return this.index++;
     }
 
-    T get(int index) {
+    public T get(int index) {
         return this.data[index];
     }
 
@@ -28,11 +28,11 @@ public class DataContainer<T>{
         return this.index;
     }
 
-    T[] getItems() {
+    public T[] getItems() {
         return (T[]) this.data;
     }
 
-    boolean delete(int index) {
+    public boolean delete(int index) {
         if (index > this.index) {
             System.out.println("не сущ. индекс");
             return false;
@@ -50,7 +50,7 @@ public class DataContainer<T>{
         return true;
     }
 
-    boolean deleteItem(T item) {
+    public boolean deleteItem(T item) {
         for (int i = 0; i < this.data.length; i++) {
             if (this.data[i]==item) {
                 return delete(i);
@@ -79,24 +79,23 @@ public class DataContainer<T>{
                 return b.append(']').toString();
             }
         }
-        T[] checkNull(T[] arr){
-            int count=0;
-            for (int i = 0; i < this.data.length; i++) {
-                if (this.data[i] == null) {
+    public void checkNull(T[] arr){
+        int count=0;
+        for (int i = 0; i < this.data.length; i++) {
+            if (this.data[i] == null) {
                     count++;
-                }
             }
-                T[] tmp = Arrays.copyOf(this.data, this.data.length - count);
-                int k=0;
-                for (int j = 0; j < data.length; j++) {
-                    tmp[k]=this.data[j];
-                    k++;
-                    this.data=tmp;
-                }
-            return this.data;
         }
+        T[] tmp = Arrays.copyOf(this.data, this.data.length - count);
+        int k=0;
+        for (int j = 0; j < data.length; j++) {
+            tmp[k]=this.data[j];
+            k++;
+            this.data=tmp;
+        }
+    }
 
-    void sort(Comparator<T> comparator){
+    public void sort(Comparator<T> comparator){
         checkNull(this.data);
         T tmp;
         for (int i = 0; i < this.data.length - 1; i++) {

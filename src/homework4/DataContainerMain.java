@@ -12,12 +12,12 @@ public class DataContainerMain {
         data.add(7);
         data.add(45);
         data.add(25);
-        data.deleteItem(25);
+        data.deleteItem(255);
         System.out.println(Arrays.toString(data.getItems()));
+        System.out.println(data.toString(data.getItems()));
         data.sort(dataComporator);
+        System.out.println(Arrays.toString(data.getItems()));
         System.out.println(data.toString(data.getItems()));
         System.out.println(data.toString(data.getItems()));
-        System.out.println(data.toString(data.getItems()));
-
     }
 }
