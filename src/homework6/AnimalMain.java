@@ -1,4 +1,4 @@
-﻿package homework6;
+package homework6;
 
 import java.util.*;
 
@@ -8,12 +8,12 @@ public class AnimalMain {
         //Работа с LinkedList
         long startLinked=System.currentTimeMillis();
         LinkedList<Animal> linkedList = new LinkedList<Animal>();
-        for (int i = 0; i < 1000000; i++) {
+        for (int i = 0; i < 100; i++) {
             linkedList.add(new Animal(Utils.randomAge(), GetNickAnimal.getNickAnimal()));
         }
         long finishLinked =System.currentTimeMillis();
-        linkedList.sort(new CompatorAgeAnimal());
-        linkedList.sort(new CompatorAgeAnimal().thenComparing(new CompatorNickAnimal()));
+        linkedList.sort(new ComparatorAgeAnimal());
+        linkedList.sort(new ComparatorAgeAnimal().thenComparing(new ComparatorNickAnimal()));
         long startLinkedIteration=System.currentTimeMillis();
         for (int i = 0; i < linkedList.size(); i++) {
             System.out.println(linkedList.get(i).getAge()+" "+ linkedList.get(i).getNick());
@@ -37,12 +37,12 @@ public class AnimalMain {
         //Работа с ArrayList
         long startArrayList=System.currentTimeMillis();
         ArrayList<Animal> arrayList = new ArrayList<Animal>();
-        for (int i = 0; i < 1000000; i++) {
+        for (int i = 0; i < 100; i++) {
             arrayList.add(new Animal(Utils.randomAge(),GetNickAnimal.getNickAnimal()));
         }
         long finishArrayList =System.currentTimeMillis();
-        arrayList.sort(new CompatorAgeAnimal());
-        arrayList.sort(new CompatorAgeAnimal().thenComparing(new CompatorNickAnimal()));
+        arrayList.sort(new ComparatorAgeAnimal());
+        arrayList.sort(new ComparatorAgeAnimal().thenComparing(new ComparatorNickAnimal()));
         long startArrayListIteration=System.currentTimeMillis();
         for (int i = 0; i < arrayList.size(); i++) {
             System.out.println(arrayList.get(i).getAge()+" "+ arrayList.get(i).getNick());
@@ -65,13 +65,13 @@ public class AnimalMain {
         //Работ с HashSet
         long startHash=System.currentTimeMillis();
         HashSet<Animal> hashSet = new HashSet<Animal>();
-        for (int i = 0; i < 1000000; i++) {
+        for (int i = 0; i < 100; i++) {
             hashSet.add(new Animal(Utils.randomAge(),GetNickAnimal.getNickAnimal()));
         }
         long finishHash =System.currentTimeMillis();
         List<Animal> list = new ArrayList<Animal>(hashSet);
-        list.sort(new CompatorAgeAnimal());
-        list.sort(new CompatorAgeAnimal().thenComparing(new CompatorNickAnimal()));
+        list.sort(new ComparatorAgeAnimal());
+        list.sort(new ComparatorAgeAnimal().thenComparing(new ComparatorNickAnimal()));
         long startHashIteration=System.currentTimeMillis();
         for (int i = 0; i < list.size(); i++) {
             System.out.println(list.get(i).getAge() + " " + list.get(i).getNick());
@@ -93,8 +93,8 @@ public class AnimalMain {
 
         // Работа с TreeSet
         long startTree=System.currentTimeMillis();
-        TreeSet<Animal> treeSet = new TreeSet<Animal>(new CompatorAgeAnimal().thenComparing(new CompatorNickAnimal()));
-        for (int i = 0; i < 1000000; i++) {
+        TreeSet<Animal> treeSet = new TreeSet<Animal>(new ComparatorAgeAnimal().thenComparing(new ComparatorNickAnimal()));
+        for (int i = 0; i < 100; i++) {
             treeSet.add(new Animal(Utils.randomAge(), GetNickAnimal.getNickAnimal()));
         }
         long finishTree =System.currentTimeMillis();

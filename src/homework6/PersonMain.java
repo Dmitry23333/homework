@@ -12,8 +12,8 @@ public class PersonMain {
             linkedList.add(new Person(GetNickPerson.getNickPerson(), Utils.randomPassword()));
         }
         long finishLinked =System.currentTimeMillis();
-        linkedList.sort(new ComopatorPasswordPerson());
-        linkedList.sort(new ComopatorPasswordPerson().thenComparing(new ComopatorNickPerson()));
+        linkedList.sort(new ComparatorPasswordPerson());
+        linkedList.sort(new ComparatorPasswordPerson().thenComparing(new ComparatorNickPerson()));
         long startLinkedIteration=System.currentTimeMillis();
         for (int i = 0; i < linkedList.size(); i++) {
             System.out.println(linkedList.get(i).getNick()+" "+ linkedList.get(i).getPassword());
@@ -41,8 +41,8 @@ public class PersonMain {
             arrayList.add(new Person(GetNickPerson.getNickPerson(), Utils.randomPassword()));
         }
         long finishArrayList =System.currentTimeMillis();
-        arrayList.sort(new ComopatorPasswordPerson());
-        arrayList.sort(new ComopatorPasswordPerson().thenComparing(new ComopatorNickPerson()));
+        arrayList.sort(new ComparatorPasswordPerson());
+        arrayList.sort(new ComparatorPasswordPerson().thenComparing(new ComparatorNickPerson()));
         long startArrayListIteration=System.currentTimeMillis();
         for (int i = 0; i < arrayList.size(); i++) {
             System.out.println(arrayList.get(i).getNick()+" "+ arrayList.get(i).getPassword());
@@ -70,8 +70,8 @@ public class PersonMain {
         }
         long finishHash =System.currentTimeMillis();
         List<Person> list = new ArrayList<Person>(hashSet);
-        list.sort(new ComopatorPasswordPerson());
-        list.sort(new ComopatorPasswordPerson().thenComparing(new ComopatorNickPerson()));
+        list.sort(new ComparatorPasswordPerson());
+        list.sort(new ComparatorPasswordPerson().thenComparing(new ComparatorNickPerson()));
         long startHashIteration=System.currentTimeMillis();
         for (int i = 0; i < list.size(); i++) {
             System.out.println(list.get(i).getNick() + " " + list.get(i).getPassword());
@@ -93,7 +93,7 @@ public class PersonMain {
 
         // Работа с TreeSet
         long startTree=System.currentTimeMillis();
-        TreeSet<Person> treeSet = new TreeSet<>(new ComopatorPasswordPerson().thenComparing(new ComopatorNickPerson()));
+        TreeSet<Person> treeSet = new TreeSet<Person>(new ComparatorPasswordPerson().thenComparing(new ComparatorNickPerson()));
         for (int i = 0; i < 1000000; i++) {
             treeSet.add(new Person(GetNickPerson.getNickPerson(), Utils.randomPassword()));
         }
