@@ -1,4 +1,4 @@
-package workwithstrings;
+﻿package workwithstrings;
 
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
@@ -56,7 +56,7 @@ public class Lines {
                 case 3:
                 case 4: words.append(leword[level][1]);
                     break;
-                default: if((h!=0)||((h==0)&&(level==1))) //если трехзначный сегмент = 0, то добавлять нужно только "рублей"
+                default: if((h!=0)||((h==0)&&(level==1))) 
                     words.append(leword[level][2]);
             }
         }
