@@ -1,4 +1,4 @@
-package homework6;
+﻿package homework6;
 
 import java.util.*;
 
@@ -8,7 +8,7 @@ public class AnimalMain {
         //Работа с LinkedList
         long startLinked=System.currentTimeMillis();
         LinkedList<Animal> linkedList = new LinkedList<Animal>();
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 100000; i++) {
             linkedList.add(new Animal(Utils.randomAge(), GetNickAnimal.getNickAnimal()));
         }
         long finishLinked =System.currentTimeMillis();
@@ -37,7 +37,7 @@ public class AnimalMain {
         //Работа с ArrayList
         long startArrayList=System.currentTimeMillis();
         ArrayList<Animal> arrayList = new ArrayList<Animal>();
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 100000; i++) {
             arrayList.add(new Animal(Utils.randomAge(),GetNickAnimal.getNickAnimal()));
         }
         long finishArrayList =System.currentTimeMillis();
@@ -65,7 +65,7 @@ public class AnimalMain {
         //Работ с HashSet
         long startHash=System.currentTimeMillis();
         HashSet<Animal> hashSet = new HashSet<Animal>();
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 100000; i++) {
             hashSet.add(new Animal(Utils.randomAge(),GetNickAnimal.getNickAnimal()));
         }
         long finishHash =System.currentTimeMillis();
@@ -94,14 +94,14 @@ public class AnimalMain {
         // Работа с TreeSet
         long startTree=System.currentTimeMillis();
         TreeSet<Animal> treeSet = new TreeSet<Animal>(new ComparatorAgeAnimal().thenComparing(new ComparatorNickAnimal()));
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 100000; i++) {
             treeSet.add(new Animal(Utils.randomAge(), GetNickAnimal.getNickAnimal()));
         }
         long finishTree =System.currentTimeMillis();
         long startTreeIteration=System.currentTimeMillis();
         List<Animal> list1 = new ArrayList<Animal>(treeSet);
         for (int i = 0; i < list1.size(); i++) {
-            System.out.println(list1.get(i).getAge() + " " + list.get(i).getNick());
+            System.out.println(list1.get(i).getAge() + " " + list1.get(i).getNick());
         }
         long finishTreeIteration=System.currentTimeMillis();
         long startTreeIterator=System.currentTimeMillis();

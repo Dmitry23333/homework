@@ -1,4 +1,4 @@
-package homework6;
+﻿package homework6;
 
 import java.util.*;
 
@@ -101,7 +101,7 @@ public class PersonMain {
         long startTreeIteration=System.currentTimeMillis();
         List<Person> list1 = new ArrayList<Person>(treeSet);
         for (int i = 0; i < list1.size(); i++) {
-            System.out.println(list1.get(i).getNick() + " " + list.get(i).getPassword());
+            System.out.println(list1.get(i).getNick() + " " + list1.get(i).getPassword());
         }
         long finishTreeIteration=System.currentTimeMillis();
         long startTreeIterator=System.currentTimeMillis();
