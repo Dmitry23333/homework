@@ -78,11 +78,11 @@ public abstract class SiteLoader {
         File dir = new File(path);
         String pathDefault = File.separator + nameFile;
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(dir, true))) {
-            if(pathDefault.equals(dir.getPath())){ /*проверка на введение пустой строки(по умолчанию
-                                                         сохранит на диск C, а нам нужно поумолчанию */
+            if(pathDefault.equals(dir.getPath())){ /*проверка на введение пустой строки*/
                 saveDefault(saveRate,currency);
+            }else{
+                writer.write(currency+" "+saveRate+"\n");
             }
-            writer.write(currency+" "+saveRate+"\n");
         } catch (IOException e) {
             System.out.println(e.getMessage());
             saveDefault(saveRate,currency);
