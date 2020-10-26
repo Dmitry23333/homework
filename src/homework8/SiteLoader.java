@@ -82,7 +82,7 @@ public abstract class SiteLoader {
                                                          сохранит на диск C, а нам нужно поумолчанию */
                 saveDefault(saveRate,currency);
             }
-            writer.write(String.valueOf((currency+" "+saveRate))+"\n");
+            writer.write(currency+" "+saveRate+"\n");
         } catch (IOException e) {
             System.out.println(e.getMessage());
             saveDefault(saveRate,currency);
@@ -91,7 +91,7 @@ public abstract class SiteLoader {
 
     public static void saveDefault(Double saveRate,Currency currency ){
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("CurrentRate", true))) {
-            writer.write(String.valueOf(currency+" "+saveRate) + "\n");
+            writer.write(currency+" "+saveRate + "\n");
             System.out.println("Файл записан по умолчанию ");
         } catch (IOException r) {
             System.out.println(r.getMessage());
