@@ -8,7 +8,7 @@ public class HomeWork5Main {
         String filePath = "src"+ File.separator+"Война и мир_книга.txt";
         String txt = text.readText(filePath);
         Set<String> set = text.getSetUnique(txt);
-        text.getTop10(txt);
+        text.getTop(txt, 10);
         ISearchEngine text1=new EasySearch();
         System.out.println(text1.search(txt,"война")+" упоминаний слова 'война'");
         System.out.println(text1.search(txt,"и")+" упоминаний слова 'и'");
