@@ -1,10 +1,9 @@
-﻿package homework8;
+package homework8;
 
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Scanner;
-import java.util.spi.CurrencyNameProvider;
 
 /**
  * Реализация загрузчика сайтов
@@ -26,13 +25,18 @@ public abstract class SiteLoader {
         }
     }
 
+    public enum Bank{
+        NBRB,
+        BelAPB;
+    }
+
     /**
      * Метод для запуска загрузки курса валют
      * @param urlToSite урл по которому надо постучаться
      * @param currencyName валюта которую мы ищем
      * @return курс который мы нашли
      */
-    protected final double load(String urlToSite, SiteLoader.Currency currencyName){
+    protected final String load(String urlToSite, SiteLoader.Currency currencyName){
         StringBuilder content;
         boolean error;
         int retryCount = 0;
@@ -69,41 +73,41 @@ public abstract class SiteLoader {
         return handle(content.toString(), currencyName);
     }
 
-    protected final void saveRate(Double saveRate, Currency currency ) {
-        String nameFile = "CurrentRate";
-        String path="";
+    protected final void saveRate(String saveRate, Currency currency,Bank bank ) {
+        String nameFile = "CurrentRate"+bank;
         System.out.println("Введите путь сохранения файла");
         Scanner in=new Scanner(System.in);
-        path = in.nextLine()+File.separator+nameFile;
+        String path = in.nextLine()+File.separator+nameFile;
         File dir = new File(path);
         String pathDefault = File.separator + nameFile;
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(dir, true))) {
             if(pathDefault.equals(dir.getPath())){ /*проверка на введение пустой строки(по умолчанию
                                                          сохранит на диск C, а нам нужно поумолчанию */
-                saveDefault(saveRate,currency);
+                saveDefault(String.valueOf(saveRate),currency,bank);
             }
-            writer.write(String.valueOf((currency+" "+saveRate))+"\n");
+            else { writer.write(currency+" "+saveRate+"\n"); }
         } catch (IOException e) {
             System.out.println(e.getMessage());
-            saveDefault(saveRate,currency);
+            saveDefault(saveRate,currency, bank);
         }
     }
 
-    public static void saveDefault(Double saveRate,Currency currency ){
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("CurrentRate", true))) {
-            writer.write(String.valueOf(currency+" "+saveRate) + "\n");
+    public static void saveDefault(String saveRate, Currency currency, Bank bank){
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("CurrentRate"+bank, true))) {
+            writer.write(currency+" "+saveRate + "\n");
             System.out.println("Файл записан по умолчанию ");
         } catch (IOException r) {
             System.out.println(r.getMessage());
         }
     }
 
-    public abstract double load(SiteLoader.Currency currencyName);
+    public abstract String load(SiteLoader.Currency currencyName);
     /**
      * Метод который будет дёрнут после успешной загрузки сайта
      * @param content содержимое сайта
      * @param currencyName валюта которую мы ищем
      * @return курс который мы нашли
      */
-    protected abstract double handle(String content, SiteLoader.Currency currencyName);
+    protected abstract String handle(String content, SiteLoader.Currency currencyName);
 }
+
