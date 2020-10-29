@@ -27,7 +27,7 @@ public class ReadFile {
         }
         return set;
     }
-    public void getTop10(String txt){
+    public void getTop(String txt, int value){
         Map<String, Integer> occurrences = new HashMap<String, Integer>();
         String[] words = txt.split("\\s+");  // Разбиение строки на слова
         for (String word : words) {
@@ -44,7 +44,7 @@ public class ReadFile {
                 return o2.getValue()-o1.getValue();
             }
         });
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < value; i++) {
             System.out.println((i + 1) + " место занимает слово " + list.get(i) + " упоминаний");
         }
     }
