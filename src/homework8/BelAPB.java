@@ -17,7 +17,7 @@ public class BelAPB extends SiteLoader {
         return load("https://www.belapb.by/ExCardsDaily.php?oneDate",currencyName);
     }
     @Override
-    public String loaddata(SiteLoader.Currency currencyName, String date) {
+    public String loadData(SiteLoader.Currency currencyName, String date) {
         return load("https://belapb.by/ExCardsDaily.php?ondate="+ date, currencyName).toString();
     }
     @Override

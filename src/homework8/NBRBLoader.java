@@ -17,7 +17,7 @@ public class NBRBLoader extends SiteLoader{
         return load("https://www.nbrb.by/api/exrates/rates/" + currencyName.getId(), currencyName).toString();
     }
     @Override
-    public String loaddata(SiteLoader.Currency currencyName, String date) {
+    public String loadData(SiteLoader.Currency currencyName, String date) {
         return load("https://www.nbrb.by/api/exrates/rates/" + currencyName.getId()+"?ondate="+date, currencyName).toString();
     }
     @Override
@@ -38,8 +38,8 @@ public class NBRBLoader extends SiteLoader{
         String result ="";
         try {
             for (int i=0;i<arrSplit.length;i++){
-                result+= content.substring(content.indexOf("Date")+ 7, content.indexOf("T00:"))+" ";
-                result+= arrSplit[i].substring(arrSplit[i].indexOf("Cur_OfficialRate") + 18, arrSplit[i].indexOf("Cur_OfficialRate") + 24)+" ";
+                result+= arrSplit[i].substring(arrSplit[i].indexOf("Date")+ 7, arrSplit[i].indexOf("T00:"))+" ";
+                result+=arrSplit[i] .substring(arrSplit[i].indexOf("Cur_OfficialRate") + 18, arrSplit[i].indexOf("Cur_OfficialRate") + 24)+" ";
             }
         }
         catch (NumberFormatException e) {

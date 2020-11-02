@@ -21,7 +21,7 @@ public class Test {
         System.out.println("Курс валют "+name+" на сегодня");
         System.out.println(loader.load(name));
         System.out.println("Курс валют "+name+" по дате:");
-        System.out.println(loader.loaddata(name,dateStart));
+        System.out.println(loader.loadData(name,dateStart));
         System.out.println("Курс валют "+name+" по дате от " + dateStart+" до " +dateEnd);
         System.out.println(loader.loadDynamicDate(name,dateStart,dateEnd));
     }
@@ -30,14 +30,14 @@ public class Test {
         System.out.println("Курс валют "+name+" на сегодня");
         System.out.println(loader.load(name));
         System.out.println("Курс валют "+name+" по дате:");
-        System.out.println(loader.loaddata(name,dateStart));
+        System.out.println(loader.loadData(name,dateStart));
     }
 
     public static void saveRatesNBRB(SiteLoader loader,SiteLoader.Currency name,String dateStart , String dateEnd) {
         System.out.println("Сохраняем курс валют "+name+" на сегодня");
         loader.saveRate(loader.load(name),name, SiteLoader.Bank.NBRB);
         System.out.println("Сохраняем курс валют "+name+" по дате: " + dateStart);
-        loader.saveRate(loader.loaddata(name,dateStart),name, SiteLoader.Bank.NBRB);
+        loader.saveRate(loader.loadData(name,dateStart),name, SiteLoader.Bank.NBRB);
         System.out.println("Сохраняем курс валют "+name+" по дате от " + dateStart+" до " +dateEnd);
         loader.saveRate(loader.loadDynamicDate(name,dateStart,dateEnd),name, SiteLoader.Bank.NBRB);
     }
@@ -45,6 +45,6 @@ public class Test {
         System.out.println("Сохраняем курс валют "+name+" на сегодня");
         loader.saveRate(loader.load(name),name, SiteLoader.Bank.BelAPB);
         System.out.println("Сохраняем курс валют "+name+" по дате: " + dateStart);
-        loader.saveRate(loader.loaddata(name,dateStart),name, SiteLoader.Bank.BelAPB);
+        loader.saveRate(loader.loadData(name,dateStart),name, SiteLoader.Bank.BelAPB);
     }
 }

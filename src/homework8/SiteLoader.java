@@ -1,4 +1,4 @@
-﻿package homework8;
+package homework8;
 
 import java.io.*;
 import java.net.HttpURLConnection;
@@ -82,8 +82,8 @@ public abstract class SiteLoader {
         File dir = new File(path);
         String pathDefault = File.separator + nameFile;
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(dir, true))) {
-            if(pathDefault.equals(dir.getPath())){ /*проверка на введение пустой строки
-                                                    сохранит на диск C, а нам нужно поумолчанию */
+            if(pathDefault.equals(dir.getPath())){ /*проверка на введение пустой строки(по умолчанию
+                                                         сохранит на диск C, а нам нужно поумолчанию */
                 saveDefault(String.valueOf(saveRate),currency,bank);
             }
             else { writer.write(currency+" "+saveRate+"\n"); }
@@ -103,7 +103,7 @@ public abstract class SiteLoader {
     }
 
     public abstract String load(SiteLoader.Currency currencyName);
-    public abstract String loaddata(SiteLoader.Currency currencyName, String date);
+    public abstract String loadData(SiteLoader.Currency currencyName, String date);
     public abstract String loadDynamicDate(SiteLoader.Currency currencyName, String startDate, String endDate);
     /**
      * Метод который будет дёрнут после успешной загрузки сайта
