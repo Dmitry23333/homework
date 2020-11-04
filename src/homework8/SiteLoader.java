@@ -83,7 +83,7 @@ public abstract class SiteLoader {
         String pathDefault = File.separator + nameFile;
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(dir, true))) {
             if(pathDefault.equals(dir.getPath())){ /*проверка на введение пустой строки(по умолчанию
-                                                         сохранит на диск C, а нам нужно поумолчанию */
+                                                         сохранит на диск C, а нам нужно около проекта */
                 saveDefault(String.valueOf(saveRate),currency,bank);
             }
             else { writer.write(currency+" "+saveRate+"\n"); }
