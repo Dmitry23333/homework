@@ -20,18 +20,6 @@ public class StudentMain {
         System.out.println("Топ "+value+" по оценкам \n"+topList);
         return  topList;
    }
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 
