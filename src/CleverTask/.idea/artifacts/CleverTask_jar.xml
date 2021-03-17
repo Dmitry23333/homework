@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="CleverTask:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/CleverTask_jar</output-path>
-    <root id="archive" name="CleverTask.jar">
-      <element id="module-output" name="CleverTask" />
-    </root>
-  </artifact>
-</component>
